@@ -43,17 +43,17 @@ class HomeController extends Controller
             // 'banner'=> Banner::get(),
             // 'bannerimage' => Page::where('name',$home)->where('type','banner')->get(),
             'bannerData' => Page::where('name', $home)
-                  ->whereIn('type', ['banner', 'bannerheading','bannerquote'])->where('status', 1)
+                  ->whereIn('type', ['banner', 'bannerheading','bannerquote'])
                   ->distinct('type')
                   ->get(),
            
-            'about' => Page::where('name', $home)->where('type','Abouttext')->where('status', 1)->first(),
-            'aboutleague' => Page::where('name', $home)->where('type','Aboutleague')->where('status', 1)->first(),
-            'frequentquest' => Page::where('name', $home)->where('status', 1)
+            'about' => Page::where('name', $home)->where('type','Abouttext')->first(),
+            'aboutleague' => Page::where('name', $home)->where('type','Aboutleague')->first(),
+            'frequentquest' => Page::where('name', $home)
             ->whereIn('type', ['frequentquestion', 'frequentanswer'])
             ->distinct('type')
             ->get(),
-            'lawofplay' => Page::where('name', $home)->where('status', 1)
+            'lawofplay' => Page::where('name', $home)
             ->whereIn('type', ['Lawofplay', 'Lawofplayfile'])
             ->distinct('type')
             ->get(),

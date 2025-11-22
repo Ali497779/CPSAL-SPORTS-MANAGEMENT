@@ -9,15 +9,17 @@ class Page extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //      'name',
-    //      'type',
-    //      'value',
-    //      'parent',
-    //      'status',
-    //      'isupload',
-    //      'contact_id'
-    // ];
+    protected $table = 'pages';
+
+    protected $fillable = [
+         'name',
+         'type',
+         'value',
+         'parent',
+         'status',
+         'isupload',
+         'contact_id'
+    ];
 
     protected $guarded = [];
     
